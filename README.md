@@ -1,16 +1,17 @@
 # Flight Delay Analysis — Data Engineering Pipeline
 
-**A data engineering portfolio project.** An end-to-end batch pipeline that turns
-**~49.7 million rows** of raw U.S. flight records (Bureau of Transportation
-Statistics, Jan 2018 – Jan 2025) into a clean, analytics-ready table and a Power
-BI dashboard answering one question: *why are flights late?*
+I took **~49.7 million rows** of raw U.S. flight records (Bureau of
+Transportation Statistics, Jan 2018 – Jan 2025) and built a batch pipeline that
+turns them into one clean, analytics-ready table behind a Power BI dashboard
+answering a simple question: *why are flights late?*
 
-The emphasis here is the **engineering**, not the charts: a reproducible
-medallion pipeline, columnar storage, SQL transformations that port to a
-warehouse, and an independent data-quality gate on the numbers the dashboard
-reports. It's deliberately built to run end-to-end on a laptop for **$0** — and
-this README is explicit about where that trade stops making sense and what a
-production version would look like instead.
+I built it to show how I'd engineer this, not just chart it. The pipeline is a
+reproducible medallion flow, everything is stored columnar in Parquet, the
+transformations are SQL that would move to a warehouse unchanged, and I
+independently recompute every dashboard number in SQL to make sure the DAX is
+right. The whole thing runs end-to-end on a laptop for **$0**. Further down I'm
+honest about where that stops being the right call and what I'd change to run it
+in production.
 
 ![Power BI dashboard — Overview](docs/dashboard_preview.png)
 
