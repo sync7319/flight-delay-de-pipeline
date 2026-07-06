@@ -1,0 +1,23 @@
+# Data lakehouse layers — large / regenerable, never committed.
+# Folder structure is kept via .gitkeep; contents are ignored.
+data/raw/*
+data/bronze/*
+data/silver/*
+data/gold/*
+!data/**/.gitkeep
+
+# Parquet / CSV anywhere
+*.parquet
+*.csv
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# OS / editors
+.DS_Store
+.vscode/
+.idea/
